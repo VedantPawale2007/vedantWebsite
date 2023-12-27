@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Embed YouTube Video</title>
+</head>
+<body>
+
+  <h1>Enter YouTube Video ID</h1>
+
+  <form id="videoForm">
+    <input type="text" id="videoId" placeholder="Enter YouTube Video ID">
+    <button type="submit">Embed Video</button>
+  </form>
+
+  <div id="videoContainer"></div>
+
+  <script>
+    // JavaScript code
+    document.getElementById('videoForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const videoId = document.getElementById('videoId').value;
+      const videoContainer = document.getElementById('videoContainer');
+      
+      if (videoId.trim() !== '') {
+        const iframe = document.createElement('iframe');
+        iframe.width = '560';
+        iframe.height = '315';
+        iframe.src = `https://www.youtube.com/embed/${videoId}`;
+        iframe.frameborder = '0';
+        iframe.allowfullscreen = true;
+        
+        videoContainer.innerHTML = ''; // Clear previous video if any
+        videoContainer.appendChild(iframe);
+      } else {
+        videoContainer.innerHTML = '<p>Please enter a valid YouTube video ID.</p>';
+      }
+    });
+  </script>
+
+</body>
+</html>

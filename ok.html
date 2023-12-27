@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Moving Title</title>
+  <style>
+    /* CSS styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow: hidden; /* Prevent horizontal scrollbar */
+    }
+    .moving-title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 36px;
+      color: #333;
+      animation: moveTitle 5s infinite alternate; /* Animation */
+    }
+    @keyframes moveTitle {
+      from {
+        transform: translate(-80%, -50%);
+      }
+      to {
+        transform: translate(+50%, +30%);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="moving-title">Welcome to My Website</div>
+
+</body>
+</html>

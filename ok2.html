@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Image from URL</title>
+  <style>
+    /* CSS styles */
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 50px;
+    }
+    #imageContainer {
+      width: 300px;
+      height: 200px;
+      border: 1px solid #ccc;
+      margin-bottom: 20px;
+    }
+    #imageUrlInput {
+      width: 280px;
+      padding: 5px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+
+  <input type="text" id="imageUrlInput" placeholder="Enter Image URL">
+  <div id="imageContainer"></div>
+
+  <script>
+    // JavaScript to dynamically load image from input URL
+    const imageUrlInput = document.getElementById('imageUrlInput');
+    const imageContainer = document.getElementById('imageContainer');
+
+    imageUrlInput.addEventListener('input', () => {
+      const imageUrl = imageUrlInput.value;
+      if (imageUrl.trim() === '') {
+        imageContainer.innerHTML = ''; // Clear image container if input is empty
+      } else {
+        const img = new Image();
+        img.src = imageUrl;
+        img.style.maxWidth = '200%';
+        img.style.maxHeight = '200%';
+        img.onload = () => {
+          imageContainer.innerHTML = ''; // Clear previous image
+          imageContainer.appendChild(img); // Append new image
+        };
+        img.onerror = () => {
+          imageContainer.innerHTML = '<p>Image not found</p>'; // Show error message if image not found
+        };
+      }
+    });
+  </script>
+
+</body>
+</html>
