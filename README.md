@@ -25,7 +25,7 @@ Welcome to my GitHub profile! I am a passionate web developer with expertise in 
 
 ## 📫 Connect with Me  
 📩 **Email:** [vedpawale9official@gmail.com](mailto:vedpawale9official@gmail.com)  
-🌐 **Website:** [vedpawale9official.ddns.net](http://vedpawale9official.ddns.net)  
+🌐 **Website:** [http://vedpawale9official.ddns.net/](http://vedpawale9official.ddns.net/)  
 
 ---
 
